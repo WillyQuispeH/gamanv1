@@ -157,7 +157,7 @@ export default function LandingPage() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-full"
+              className="rounded-ful"
             >
               {mounted && theme === "dark" ? (
                 <Sun className="size-[18px]" />
@@ -171,7 +171,7 @@ export default function LandingPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="rounded-full">
+              <Button className="rounded-full bg-slate-800 text-white hover:bg-slate-900">
                 Contáctar
                 <ChevronRight className="ml-1 size-4" />
               </Button>
@@ -345,7 +345,7 @@ export default function LandingPage() {
         </section>
 
         {/* Logos Section */}
-        <section className="w-full py-12 border-y bg-muted/30">
+        {/* <section className="w-full py-12 border-y bg-muted/30">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <p className="text-sm font-medium text-muted-foreground">
@@ -368,7 +368,7 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Features Section */}
         <section id="features" className="w-full py-20 md:py-32">
@@ -846,10 +846,13 @@ export default function LandingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-white to-gray-50 dark:from-neutral-950 dark:to-neutral-900 text-gray-900 dark:text-gray-100 relative overflow-hidden">
+          {/* Grid lines */}
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+          {/* Blur circles */}
+          <div className="absolute -top-24 -left-24 w-64 h-64 bg-black/10 dark:bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-black/10 dark:bg-white/10 rounded-full blur-3xl"></div>
 
           <div className="container px-4 md:px-6 relative">
             <motion.div
@@ -862,7 +865,8 @@ export default function LandingPage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
                 ¿Listo para Implementar Tecnología en tu Negocio?
               </h2>
-              <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
+
+              <p className="mx-auto max-w-[700px] text-gray-600 dark:text-gray-300 md:text-xl">
                 Únete a miles de clientes satisfechos que han transformado sus
                 negocios mediante la implementación de soluciones tecnológicas
                 avanzadas y han mejorado su productividad.
@@ -883,17 +887,10 @@ export default function LandingPage() {
                     <ArrowRight className="ml-2 size-4" />
                   </Button>
                 </a>
-
-                {/* <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
-                >
-                  Schedule a Demo
-                </Button> */}
               </div>
-              <p className="text-sm text-primary-foreground/80 mt-4">
-                No credit card required. 14-day free trial. Cancel anytime.
+
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+                Disponibles 24/7
               </p>
             </motion.div>
           </div>
