@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   Check,
   ChevronRight,
@@ -18,37 +18,42 @@ import {
   Users,
   BarChart,
   Layers,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useTheme } from "next-themes"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTheme } from "next-themes";
 
 export default function LandingPage() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
+    setMounted(true);
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const container = {
     hidden: { opacity: 0 },
@@ -58,76 +63,87 @@ export default function LandingPage() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  }
-
+  };
   const features = [
     {
-      title: "Smart Automation",
-      description: "Automate repetitive tasks and workflows to save time and reduce errors.",
+      title: "Automatización Inteligente con IA",
+      description:
+        "Automatiza tareas repetitivas y flujos de trabajo mediante inteligencia artificial, ahorrando tiempo y reduciendo errores.",
       icon: <Zap className="size-5" />,
     },
     {
-      title: "Advanced Analytics",
-      description: "Gain valuable insights with real-time data visualization and reporting.",
+      title: "Análisis Avanzados con IA",
+      description:
+        "Obtén información valiosa con análisis predictivos y visualización de datos en tiempo real gracias a la inteligencia artificial.",
       icon: <BarChart className="size-5" />,
     },
     {
-      title: "Team Collaboration",
-      description: "Work together seamlessly with integrated communication tools.",
+      title: "Colaboración en Equipo Optimizada",
+      description:
+        "Facilita la comunicación y colaboración en tu equipo mediante herramientas integradas de IA para mejorar la productividad.",
       icon: <Users className="size-5" />,
     },
     {
-      title: "Enterprise Security",
-      description: "Keep your data safe with end-to-end encryption and compliance features.",
+      title: "Seguridad Inteligente para Empresas",
+      description:
+        "Protege tus datos con algoritmos de seguridad avanzados basados en IA, cifrado de extremo a extremo y cumplimiento normativo.",
       icon: <Shield className="size-5" />,
     },
     {
-      title: "Seamless Integration",
-      description: "Connect with your favorite tools through our extensive API ecosystem.",
+      title: "Integración de Sistemas con IA",
+      description:
+        "Conecta tus herramientas favoritas y sistemas externos de manera eficiente a través de nuestra plataforma con IA y API avanzada.",
       icon: <Layers className="size-5" />,
     },
     {
-      title: "24/7 Support",
-      description: "Get help whenever you need it with our dedicated support team.",
+      title: "Soporte 24/7 con IA",
+      description:
+        "Accede a soporte técnico en cualquier momento con nuestro equipo de atención al cliente asistido por inteligencia artificial.",
       icon: <Star className="size-5" />,
     },
-  ]
+  ];
 
   return (
     <div className="flex min-h-[100dvh] flex-col">
       <header
-        className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${isScrolled ? "bg-background/80 shadow-sm" : "bg-transparent"}`}
+        className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${
+          isScrolled ? "bg-background/80 shadow-sm" : "bg-transparent"
+        }`}
       >
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2 font-bold">
-            <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-              S
-            </div>
-            <span>SaaSify</span>
+            <Image src="/logoIcon.png" alt="" width={45} height={45} />
+            <Image
+              src="/namewhite.png"
+              alt=""
+              width={70}
+              height={40}
+              className={theme === "light" ? "dark:invert brightness-0" : ""}
+            />
           </div>
           <nav className="hidden md:flex gap-8">
             <Link
               href="#features"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Features
+              Caracteristicas
             </Link>
             <Link
               href="#testimonials"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Testimonials
+              Testimonios
             </Link>
             <Link
-              href="#pricing"
+              href="#portfolio"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Pricing
+              Portafolio
             </Link>
             <Link
               href="#faq"
@@ -137,27 +153,53 @@ export default function LandingPage() {
             </Link>
           </nav>
           <div className="hidden md:flex gap-4 items-center">
-            <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-              {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full"
+            >
+              {mounted && theme === "dark" ? (
+                <Sun className="size-[18px]" />
+              ) : (
+                <Moon className="size-[18px]" />
+              )}
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Link
-              href="#"
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            <a
+              href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Log in
-            </Link>
-            <Button className="rounded-full">
-              Get Started
-              <ChevronRight className="ml-1 size-4" />
-            </Button>
+              <Button className="rounded-full">
+                Contáctar
+                <ChevronRight className="ml-1 size-4" />
+              </Button>
+            </a>
           </div>
           <div className="flex items-center gap-4 md:hidden">
-            <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-              {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full"
+            >
+              {mounted && theme === "dark" ? (
+                <Sun className="size-[18px]" />
+              ) : (
+                <Moon className="size-[18px]" />
+              )}
             </Button>
-            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X className="size-5" />
+              ) : (
+                <Menu className="size-5" />
+              )}
               <span className="sr-only">Toggle menu</span>
             </Button>
           </div>
@@ -171,26 +213,49 @@ export default function LandingPage() {
             className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b"
           >
             <div className="container py-4 flex flex-col gap-4">
-              <Link href="#features" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Features
+              <Link
+                href="#features"
+                className="py-2 text-sm font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Caracteristicas
               </Link>
-              <Link href="#testimonials" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Testimonials
+              <Link
+                href="#testimonials"
+                className="py-2 text-sm font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Testimonios
               </Link>
-              <Link href="#pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Pricing
+              <Link
+                href="#portfolio"
+                className="py-2 text-sm font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Portafolio
               </Link>
-              <Link href="#faq" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="#faq"
+                className="py-2 text-sm font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 FAQ
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t">
-                <Link href="#" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                  Log in
-                </Link>
-                <Button className="rounded-full">
-                  Get Started
-                  <ChevronRight className="ml-1 size-4" />
-                </Button>
+                <a
+                  href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="rounded-full h-12 px-8 text-base"
+                  >
+                    Contáctanos por WhatsApp
+                    <ArrowRight className="ml-2 size-4" />
+                  </Button>
+                </a>
               </div>
             </div>
           </motion.div>
@@ -208,37 +273,50 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-3xl mx-auto mb-12"
             >
-              <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                Launching Soon
+              <Badge
+                className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium"
+                variant="secondary"
+              >
+                Lanzamiento Próximo
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                Elevate Your Workflow with SaaSify
+                Eleva tu Flujo de Trabajo con Gaman
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                The all-in-one platform that helps teams collaborate, automate, and deliver exceptional results.
-                Streamline your processes and focus on what matters most.
+                La plataforma todo-en-uno que ayuda a los equipos a colaborar,
+                automatizar y entregar resultados excepcionales. Optimiza tus
+                procesos y enfócate en lo que realmente importa con nuestras
+                soluciones personalizadas de desarrollo web e IA.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full h-12 px-8 text-base">
-                  Start Free Trial
-                  <ArrowRight className="ml-2 size-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base">
-                  Book a Demo
-                </Button>
+                <a
+                  href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="rounded-full h-12 px-8 text-base"
+                  >
+                    Contáctanos por WhatsApp
+                    <ArrowRight className="ml-2 size-4" />
+                  </Button>
+                </a>
               </div>
               <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Check className="size-4 text-primary" />
-                  <span>No credit card</span>
+                  <span>Sin compromiso</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Check className="size-4 text-primary" />
-                  <span>14-day trial</span>
+                  <span>Respuesta rápida por WhatsApp</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Check className="size-4 text-primary" />
-                  <span>Cancel anytime</span>
+                  <span>Asesoría gratuita inicial</span>
                 </div>
               </div>
             </motion.div>
@@ -270,7 +348,10 @@ export default function LandingPage() {
         <section className="w-full py-12 border-y bg-muted/30">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <p className="text-sm font-medium text-muted-foreground">Trusted by innovative companies worldwide</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                Confiado por empresas innovadoras a nivel mundial
+              </p>
+
               <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <Image
@@ -279,7 +360,9 @@ export default function LandingPage() {
                     alt={`Company logo ${i}`}
                     width={120}
                     height={60}
-                    className="h-8 w-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+                    className={`${
+                      theme === "light" ? "dark:invert brightness-0" : ""
+                    } h-8 w-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0 `}
                   />
                 ))}
               </div>
@@ -297,13 +380,20 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                Features
+              <Badge
+                className="rounded-full px-4 py-1.5 text-sm font-medium"
+                variant="secondary"
+              >
+                Características
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Everything You Need to Succeed</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Todo lo que Necesitas para Tener Éxito
+              </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Our comprehensive platform provides all the tools you need to streamline your workflow, boost
-                productivity, and achieve your goals.
+                Nuestra plataforma integral ofrece todas las herramientas
+                necesarias para optimizar tus flujos de trabajo, aumentar la
+                productividad y alcanzar tus objetivos con soluciones
+                personalizadas de desarrollo web e inteligencia artificial.
               </p>
             </motion.div>
 
@@ -321,8 +411,12 @@ export default function LandingPage() {
                       <div className="size-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
                         {feature.icon}
                       </div>
-                      <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.description}</p>
+                      <h3 className="text-xl font-bold mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {feature.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -343,12 +437,19 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                How It Works
+              <Badge
+                className="rounded-full px-4 py-1.5 text-sm font-medium"
+                variant="secondary"
+              >
+                Cómo Funciona
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Simple Process, Powerful Results</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Proceso Sencillo, Resultados Poderosos
+              </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Get started in minutes and see the difference our platform can make for your business.
+                Comienza en minutos y descubre la diferencia que nuestra
+                plataforma puede hacer por tu negocio con soluciones de
+                desarrollo web personalizadas e IA.
               </p>
             </motion.div>
 
@@ -358,18 +459,21 @@ export default function LandingPage() {
               {[
                 {
                   step: "01",
-                  title: "Create Account",
-                  description: "Sign up in seconds with just your email. No credit card required to get started.",
+                  title: "Contacto Rápido",
+                  description:
+                    "Contáctanos rápidamente a través de nuestra plataforma para obtener respuestas inmediatas sobre desarrollo web y soluciones personalizadas.",
                 },
                 {
                   step: "02",
-                  title: "Configure Workspace",
-                  description: "Customize your workspace to match your team's unique workflow and requirements.",
+                  title: "Configura tu Espacio de Trabajo",
+                  description:
+                    "Personaliza tu espacio de trabajo de forma fácil y económica, adaptado a las necesidades de desarrollo web de tu equipo.",
                 },
                 {
                   step: "03",
-                  title: "Boost Productivity",
-                  description: "Start using our powerful features to streamline processes and achieve your goals.",
+                  title: "Aumenta la Productividad",
+                  description:
+                    "Comienza a utilizar nuestras herramientas de desarrollo web para optimizar procesos y alcanzar tus objetivos de manera eficiente y rápida.",
                 },
               ].map((step, i) => (
                 <motion.div
@@ -401,12 +505,19 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                Testimonials
+              <Badge
+                className="rounded-full px-4 py-1.5 text-sm font-medium"
+                variant="secondary"
+              >
+                Testimonios
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Loved by Teams Worldwide</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Apreciado por Equipos en Todo el Mundo
+              </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Don't just take our word for it. See what our customers have to say about their experience.
+                No solo confíes en nuestra palabra. Descubre lo que nuestros
+                clientes dicen sobre su experiencia con nuestras soluciones de
+                desarrollo web personalizadas.
               </p>
             </motion.div>
 
@@ -414,43 +525,43 @@ export default function LandingPage() {
               {[
                 {
                   quote:
-                    "SaaSify has transformed how we manage our projects. The automation features have saved us countless hours of manual work.",
-                  author: "Sarah Johnson",
-                  role: "Project Manager, TechCorp",
+                    "Gaman ha transformado la forma en que gestionamos nuestros proyectos. Las características de automatización nos han ahorrado innumerables horas de trabajo manual.",
+                  author: "Sara González",
+                  role: "Gerente de Proyectos, TechCorp",
                   rating: 5,
                 },
                 {
                   quote:
-                    "The analytics dashboard provides insights we never had access to before. It's helped us make data-driven decisions that have improved our ROI.",
-                  author: "Michael Chen",
-                  role: "Marketing Director, GrowthLabs",
+                    "El panel de análisis nos proporciona información a la que nunca habíamos tenido acceso. Nos ha ayudado a tomar decisiones basadas en datos que han mejorado nuestro retorno de inversión.",
+                  author: "Miguel Fernández",
+                  role: "Director de Marketing, GrowthLabs",
                   rating: 5,
                 },
                 {
                   quote:
-                    "Customer support is exceptional. Any time we've had an issue, the team has been quick to respond and resolve it. Couldn't ask for better service.",
-                  author: "Emily Rodriguez",
-                  role: "Operations Lead, StartupX",
+                    "El soporte al cliente es excepcional. Cada vez que hemos tenido un problema, el equipo ha respondido rápidamente y lo ha resuelto. No podríamos pedir mejor servicio.",
+                  author: "Emilia Rodríguez",
+                  role: "Líder de Operaciones, StartupX",
                   rating: 5,
                 },
                 {
                   quote:
-                    "We've tried several similar solutions, but none compare to the ease of use and comprehensive features of SaaSify. It's been a game-changer.",
+                    "Hemos probado varias soluciones similares, pero ninguna se compara con la facilidad de uso y las funciones integrales de Gaman. Ha sido un cambio total.",
                   author: "David Kim",
                   role: "CEO, InnovateNow",
                   rating: 5,
                 },
                 {
                   quote:
-                    "The collaboration tools have made remote work so much easier for our team. We're more productive than ever despite being spread across different time zones.",
+                    "Las herramientas de colaboración han hecho el trabajo remoto mucho más fácil para nuestro equipo. Somos más productivos que nunca, a pesar de estar en diferentes zonas horarias.",
                   author: "Lisa Patel",
-                  role: "HR Director, RemoteFirst",
+                  role: "Directora de RRHH, RemoteFirst",
                   rating: 5,
                 },
                 {
                   quote:
-                    "Implementation was seamless, and the ROI was almost immediate. We've reduced our operational costs by 30% since switching to SaaSify.",
-                  author: "James Wilson",
+                    "La implementación fue perfecta y el retorno de inversión fue casi inmediato. Hemos reducido nuestros costos operativos en un 30% desde que cambiamos a Gaman.",
+                  author: "Jaime Wilson",
                   role: "COO, ScaleUp Inc",
                   rating: 5,
                 },
@@ -468,17 +579,24 @@ export default function LandingPage() {
                         {Array(testimonial.rating)
                           .fill(0)
                           .map((_, j) => (
-                            <Star key={j} className="size-4 text-yellow-500 fill-yellow-500" />
+                            <Star
+                              key={j}
+                              className="size-4 text-yellow-500 fill-yellow-500"
+                            />
                           ))}
                       </div>
-                      <p className="text-lg mb-6 flex-grow">{testimonial.quote}</p>
+                      <p className="text-lg mb-6 flex-grow">
+                        {testimonial.quote}
+                      </p>
                       <div className="flex items-center gap-4 mt-auto pt-4 border-t border-border/40">
                         <div className="size-10 rounded-full bg-muted flex items-center justify-center text-foreground font-medium">
                           {testimonial.author.charAt(0)}
                         </div>
                         <div>
                           <p className="font-medium">{testimonial.author}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {testimonial.role}
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -490,7 +608,10 @@ export default function LandingPage() {
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+        <section
+          id="portfolio"
+          className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden"
+        >
           <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
 
           <div className="container px-4 md:px-6 relative">
@@ -501,66 +622,61 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                Pricing
+              <Badge
+                className="rounded-full px-4 py-1.5 text-sm font-medium"
+                variant="secondary"
+              >
+                Portafolio
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Simple, Transparent Pricing</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Portafolio de Proyectos
+              </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Choose the plan that's right for your business. All plans include a 14-day free trial.
+                Descubre algunos de los proyectos más destacados que hemos
+                desarrollado para nuestros clientes.
               </p>
             </motion.div>
 
             <div className="mx-auto max-w-5xl">
-              <Tabs defaultValue="monthly" className="w-full">
+              <Tabs defaultValue="web-systems" className="w-full">
                 <div className="flex justify-center mb-8">
                   <TabsList className="rounded-full p-1">
-                    <TabsTrigger value="monthly" className="rounded-full px-6">
-                      Monthly
+                    <TabsTrigger
+                      value="web-systems"
+                      className="rounded-full px-6"
+                    >
+                      Sistemas Web
                     </TabsTrigger>
-                    <TabsTrigger value="annually" className="rounded-full px-6">
-                      Annually (Save 20%)
+                    <TabsTrigger
+                      value="landing-pages"
+                      className="rounded-full px-6"
+                    >
+                      Landing Pages
                     </TabsTrigger>
                   </TabsList>
                 </div>
-                <TabsContent value="monthly">
+                <TabsContent value="web-systems">
                   <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
                     {[
                       {
-                        name: "Starter",
-                        price: "$29",
-                        description: "Perfect for small teams and startups.",
-                        features: ["Up to 5 team members", "Basic analytics", "5GB storage", "Email support"],
-                        cta: "Start Free Trial",
+                        name: "Sistema de Gestión Empresarial",
+                        description:
+                          "Desarrollamos un sistema completo para la gestión de empresas con funcionalidades avanzadas y personalizadas.",
+                        image: "path_to_image_1.jpg",
                       },
                       {
-                        name: "Professional",
-                        price: "$79",
-                        description: "Ideal for growing businesses.",
-                        features: [
-                          "Up to 20 team members",
-                          "Advanced analytics",
-                          "25GB storage",
-                          "Priority email support",
-                          "API access",
-                        ],
-                        cta: "Start Free Trial",
-                        popular: true,
+                        name: "Portal Web para E-commerce",
+                        description:
+                          "Creación de una plataforma de comercio electrónico con integraciones de pago y gestión de productos.",
+                        image: "path_to_image_2.jpg",
                       },
                       {
-                        name: "Enterprise",
-                        price: "$199",
-                        description: "For large organizations with complex needs.",
-                        features: [
-                          "Unlimited team members",
-                          "Custom analytics",
-                          "Unlimited storage",
-                          "24/7 phone & email support",
-                          "Advanced API access",
-                          "Custom integrations",
-                        ],
-                        cta: "Contact Sales",
+                        name: "Sistema de Reservas Online",
+                        description:
+                          "Desarrollo de un sistema online para reservas con integración a calendarios y gestión de clientes.",
+                        image: "path_to_image_3.jpg",
                       },
-                    ].map((plan, i) => (
+                    ].map((project, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, y: 20 }}
@@ -568,80 +684,47 @@ export default function LandingPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: i * 0.1 }}
                       >
-                        <Card
-                          className={`relative overflow-hidden h-full ${plan.popular ? "border-primary shadow-lg" : "border-border/40 shadow-md"} bg-gradient-to-b from-background to-muted/10 backdrop-blur`}
-                        >
-                          {plan.popular && (
-                            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
-                              Most Popular
-                            </div>
-                          )}
-                          <CardContent className="p-6 flex flex-col h-full">
-                            <h3 className="text-2xl font-bold">{plan.name}</h3>
-                            <div className="flex items-baseline mt-4">
-                              <span className="text-4xl font-bold">{plan.price}</span>
-                              <span className="text-muted-foreground ml-1">/month</span>
-                            </div>
-                            <p className="text-muted-foreground mt-2">{plan.description}</p>
-                            <ul className="space-y-3 my-6 flex-grow">
-                              {plan.features.map((feature, j) => (
-                                <li key={j} className="flex items-center">
-                                  <Check className="mr-2 size-4 text-primary" />
-                                  <span>{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                            <Button
-                              className={`w-full mt-auto rounded-full ${plan.popular ? "bg-primary hover:bg-primary/90" : "bg-muted hover:bg-muted/80"}`}
-                              variant={plan.popular ? "default" : "outline"}
-                            >
-                              {plan.cta}
-                            </Button>
+                        <Card className="bg-gradient-to-b from-background to-muted/10 backdrop-blur">
+                          <CardContent className="p-6">
+                            <h3 className="text-2xl font-bold">
+                              {project.name}
+                            </h3>
+                            <p className="text-muted-foreground mt-2">
+                              {project.description}
+                            </p>
+                            <img
+                              src={project.image}
+                              alt={project.name}
+                              className="w-full mt-4"
+                            />
                           </CardContent>
                         </Card>
                       </motion.div>
                     ))}
                   </div>
                 </TabsContent>
-                <TabsContent value="annually">
+                <TabsContent value="landing-pages">
                   <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
                     {[
                       {
-                        name: "Starter",
-                        price: "$23",
-                        description: "Perfect for small teams and startups.",
-                        features: ["Up to 5 team members", "Basic analytics", "5GB storage", "Email support"],
-                        cta: "Start Free Trial",
+                        name: "Landing Page para Producto",
+                        description:
+                          "Diseño y desarrollo de una landing page optimizada para conversiones de un producto específico.",
+                        image: "path_to_image_4.jpg",
                       },
                       {
-                        name: "Professional",
-                        price: "$63",
-                        description: "Ideal for growing businesses.",
-                        features: [
-                          "Up to 20 team members",
-                          "Advanced analytics",
-                          "25GB storage",
-                          "Priority email support",
-                          "API access",
-                        ],
-                        cta: "Start Free Trial",
-                        popular: true,
+                        name: "Landing Page para Evento",
+                        description:
+                          "Creación de una página de aterrizaje para promover un evento con integración de formularios de inscripción.",
+                        image: "path_to_image_5.jpg",
                       },
                       {
-                        name: "Enterprise",
-                        price: "$159",
-                        description: "For large organizations with complex needs.",
-                        features: [
-                          "Unlimited team members",
-                          "Custom analytics",
-                          "Unlimited storage",
-                          "24/7 phone & email support",
-                          "Advanced API access",
-                          "Custom integrations",
-                        ],
-                        cta: "Contact Sales",
+                        name: "Landing Page para Captación de Leads",
+                        description:
+                          "Desarrollamos una landing page enfocada en la captación de leads con diseño atractivo y llamadas a la acción claras.",
+                        image: "path_to_image_6.jpg",
                       },
-                    ].map((plan, i) => (
+                    ].map((project, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, y: 20 }}
@@ -649,35 +732,19 @@ export default function LandingPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: i * 0.1 }}
                       >
-                        <Card
-                          className={`relative overflow-hidden h-full ${plan.popular ? "border-primary shadow-lg" : "border-border/40 shadow-md"} bg-gradient-to-b from-background to-muted/10 backdrop-blur`}
-                        >
-                          {plan.popular && (
-                            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
-                              Most Popular
-                            </div>
-                          )}
-                          <CardContent className="p-6 flex flex-col h-full">
-                            <h3 className="text-2xl font-bold">{plan.name}</h3>
-                            <div className="flex items-baseline mt-4">
-                              <span className="text-4xl font-bold">{plan.price}</span>
-                              <span className="text-muted-foreground ml-1">/month</span>
-                            </div>
-                            <p className="text-muted-foreground mt-2">{plan.description}</p>
-                            <ul className="space-y-3 my-6 flex-grow">
-                              {plan.features.map((feature, j) => (
-                                <li key={j} className="flex items-center">
-                                  <Check className="mr-2 size-4 text-primary" />
-                                  <span>{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                            <Button
-                              className={`w-full mt-auto rounded-full ${plan.popular ? "bg-primary hover:bg-primary/90" : "bg-muted hover:bg-muted/80"}`}
-                              variant={plan.popular ? "default" : "outline"}
-                            >
-                              {plan.cta}
-                            </Button>
+                        <Card className="bg-gradient-to-b from-background to-muted/10 backdrop-blur">
+                          <CardContent className="p-6">
+                            <h3 className="text-2xl font-bold">
+                              {project.name}
+                            </h3>
+                            <p className="text-muted-foreground mt-2">
+                              {project.description}
+                            </p>
+                            <img
+                              src={project.image}
+                              alt={project.name}
+                              className="w-full mt-4"
+                            />
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -699,12 +766,18 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                FAQ
+              <Badge
+                className="rounded-full px-4 py-1.5 text-sm font-medium"
+                variant="secondary"
+              >
+                PREGUNTAS FRECUENTES
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Frequently Asked Questions</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Preguntas Frecuentes
+              </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Find answers to common questions about our platform.
+                Encuentra respuestas a las preguntas comunes sobre nuestras
+                soluciones de desarrollo web e inteligencia artificial.
               </p>
             </motion.div>
 
@@ -712,34 +785,39 @@ export default function LandingPage() {
               <Accordion type="single" collapsible className="w-full">
                 {[
                   {
-                    question: "How does the 14-day free trial work?",
+                    question:
+                      "¿Cuánto tiempo toma completar un proyecto de desarrollo web?",
                     answer:
-                      "Our 14-day free trial gives you full access to all features of your selected plan. No credit card is required to sign up, and you can cancel at any time during the trial period with no obligation.",
+                      "El tiempo de entrega depende de la complejidad y los requisitos específicos del proyecto. En general, los proyectos pueden tomar desde unas pocas semanas hasta varios meses, dependiendo de su alcance.",
                   },
                   {
-                    question: "Can I change plans later?",
+                    question:
+                      "¿Puedo hacer cambios durante el proceso de desarrollo?",
                     answer:
-                      "Yes, you can upgrade or downgrade your plan at any time. If you upgrade, the new pricing will be prorated for the remainder of your billing cycle. If you downgrade, the new pricing will take effect at the start of your next billing cycle.",
+                      "Sí, durante el proceso de desarrollo se pueden realizar ajustes y modificaciones según sea necesario. Sin embargo, es importante tener en cuenta que los cambios pueden afectar el plazo de entrega y el costo final del proyecto.",
                   },
                   {
-                    question: "Is there a limit to how many users I can add?",
+                    question:
+                      "¿Ofrecen mantenimiento y soporte después de completar el proyecto?",
                     answer:
-                      "The number of users depends on your plan. The Starter plan allows up to 5 team members, the Professional plan allows up to 20, and the Enterprise plan has no limit on team members.",
+                      "Sí, ofrecemos planes de mantenimiento y soporte continuos para garantizar que tu sitio web funcione correctamente a lo largo del tiempo, con actualizaciones y correcciones cuando sea necesario.",
                   },
                   {
-                    question: "Do you offer discounts for nonprofits or educational institutions?",
+                    question: "¿Qué tecnologías usan para el desarrollo web?",
                     answer:
-                      "Yes, we offer special pricing for nonprofits, educational institutions, and open-source projects. Please contact our sales team for more information.",
+                      "Utilizamos tecnologías modernas y escalables como React, Next.js, Node.js, y soluciones de backend personalizadas, adaptándonos a las necesidades específicas de cada cliente para garantizar un rendimiento óptimo.",
                   },
                   {
-                    question: "How secure is my data?",
+                    question:
+                      "¿Puedo tener acceso al código fuente de mi proyecto?",
                     answer:
-                      "We take security very seriously. All data is encrypted both in transit and at rest. We use industry-standard security practices and regularly undergo security audits. Our platform is compliant with GDPR, CCPA, and other relevant regulations.",
+                      "Sí, todos nuestros clientes tienen acceso completo al código fuente de su proyecto una vez que se haya completado. Creemos en la transparencia y en brindar a nuestros clientes el control total sobre sus productos digitales.",
                   },
                   {
-                    question: "What kind of support do you offer?",
+                    question:
+                      "¿Qué sucede si tengo un problema después de que el proyecto esté terminado?",
                     answer:
-                      "Support varies by plan. All plans include email support, with the Professional plan offering priority email support. The Enterprise plan includes 24/7 phone and email support. We also have an extensive knowledge base and community forum available to all users.",
+                      "Nuestro equipo de soporte está disponible para ayudarte con cualquier problema que puedas enfrentar después de completar el proyecto. Ofrecemos soporte post-lanzamiento para resolver problemas técnicos o para realizar mejoras adicionales.",
                   },
                 ].map((faq, i) => (
                   <motion.div
@@ -749,11 +827,16 @@ export default function LandingPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.05 }}
                   >
-                    <AccordionItem value={`item-${i}`} className="border-b border-border/40 py-2">
+                    <AccordionItem
+                      value={`item-${i}`}
+                      className="border-b border-border/40 py-2"
+                    >
                       <AccordionTrigger className="text-left font-medium hover:no-underline">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+                      <AccordionContent className="text-muted-foreground">
+                        {faq.answer}
+                      </AccordionContent>
                     </AccordionItem>
                   </motion.div>
                 ))}
@@ -777,24 +860,37 @@ export default function LandingPage() {
               className="flex flex-col items-center justify-center space-y-6 text-center"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                Ready to Transform Your Workflow?
+                ¿Listo para Implementar Tecnología en tu Negocio?
               </h2>
               <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-                Join thousands of satisfied customers who have streamlined their processes and boosted productivity with
-                our platform.
+                Únete a miles de clientes satisfechos que han transformado sus
+                negocios mediante la implementación de soluciones tecnológicas
+                avanzadas y han mejorado su productividad.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <Button size="lg" variant="secondary" className="rounded-full h-12 px-8 text-base">
-                  Start Free Trial
-                  <ArrowRight className="ml-2 size-4" />
-                </Button>
-                <Button
+                <a
+                  href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="rounded-full h-12 px-8 text-base"
+                  >
+                    Contáctanos por WhatsApp
+                    <ArrowRight className="ml-2 size-4" />
+                  </Button>
+                </a>
+
+                {/* <Button
                   size="lg"
                   variant="outline"
                   className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
                 >
                   Schedule a Demo
-                </Button>
+                </Button> */}
               </div>
               <p className="text-sm text-primary-foreground/80 mt-4">
                 No credit card required. 14-day free trial. Cancel anytime.
@@ -808,16 +904,27 @@ export default function LandingPage() {
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-2 font-bold">
-                <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-                  S
-                </div>
-                <span>SaaSify</span>
+                <Image src="/logoIcon.png" alt="" width={45} height={45} />
+                <Image
+                  src="/namewhite.png"
+                  alt=""
+                  width={70}
+                  height={40}
+                  className={
+                    theme === "light" ? "dark:invert brightness-0" : ""
+                  }
+                />
               </div>
               <p className="text-sm text-muted-foreground">
-                Streamline your workflow with our all-in-one SaaS platform. Boost productivity and scale your business.
+                Optimiza tus procesos de negocio con nuestras soluciones
+                tecnológicas integrales. Aumenta la productividad y haz crecer
+                tu empresa con la mejor tecnología.
               </p>
               <div className="flex gap-4">
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -834,7 +941,10 @@ export default function LandingPage() {
                   </svg>
                   <span className="sr-only">Facebook</span>
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -851,7 +961,10 @@ export default function LandingPage() {
                   </svg>
                   <span className="sr-only">Twitter</span>
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -872,26 +985,38 @@ export default function LandingPage() {
                 </Link>
               </div>
             </div>
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <h4 className="text-sm font-bold">Product</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#features"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#pricing"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Integrations
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     API
                   </Link>
                 </li>
@@ -901,22 +1026,34 @@ export default function LandingPage() {
               <h4 className="text-sm font-bold">Resources</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Documentation
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Guides
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Support
                   </Link>
                 </li>
@@ -926,40 +1063,63 @@ export default function LandingPage() {
               <h4 className="text-sm font-bold">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Careers
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     Terms of Service
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-border/40 pt-8">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} SaaSify. All rights reserved.
+              &copy; {new Date().getFullYear()} Gaman. Todos los derechos
+              reservados.
             </p>
+
             <div className="flex gap-4">
-              <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
                 Terms of Service
               </Link>
-              <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
                 Cookie Policy
               </Link>
             </div>
@@ -967,5 +1127,5 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
