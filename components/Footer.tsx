@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2 font-bold">
-              <Image src="/logoIcon.png" alt="" width={45} height={45} />
+              <Image src="/iconNimux.png" alt="" width={40} height={40} />
               <Image
                 src="/namewhite.png"
                 alt=""
@@ -24,7 +24,7 @@ export function Footer() {
               tecnológicas integrales. Aumenta la productividad y haz crecer
               tu empresa con la mejor tecnología.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -87,7 +87,7 @@ export function Footer() {
                 </svg>
                 <span className="sr-only">LinkedIn</span>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-border/40 pt-8">
@@ -95,7 +95,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Gaman. Todos los derechos
             reservados.
           </p>
-
+{/* 
           <div className="flex gap-4">
             <Link
               href="#"
@@ -115,7 +115,7 @@ export function Footer() {
             >
               Cookie Policy
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -32,7 +32,7 @@ export function Header() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold">
-          <Image src="/iconNimux.png" alt="" width={45} height={45} />
+          <Image src="/iconNimux.png" alt="" width={40} height={40} />
           <Image
             src="/namewhite.png"
             alt=""
