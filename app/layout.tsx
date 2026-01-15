@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Gaman",
     images: [
       {
-        url: "https://gaman.dev/logoIcon.png",
+        url: "https://gaman.dev/iconNimux.png",
         width: 1200,
         height: 630,
         alt: "Gaman Desarrollo Web",
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
     description:
       "Impulsa tu negocio con soluciones web personalizadas, QA y automatización.",
     images: [
-      "https://gaman.dev/logoIcon.png",
+      "https://gaman.dev/iconNimbux .png",
       "https://gaman.dev/namewhite.png",
     ],
   },
   generator: "Next.js 14",
   icons: {
-    icon: "/logoIcon.png",
+    icon: "/iconNimux.png",
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
