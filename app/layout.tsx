@@ -1,10 +1,17 @@
 import type React from "react";
 import "@/styles/globals.css";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const poppins = Poppins({ 
+  subsets: ["latin"], 
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   title: "Gaman - Desarrollo de Sistemas Web y Soporte QA",
@@ -68,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning className="dark">
       <head>
         {/* Extra: Google Site Verification (si tienes código) */}
         {/* <meta name="google-site-verification" content="tu_codigo_aqui" /> */}
@@ -83,14 +90,19 @@ export default function RootLayout({
           `,
         }} /> */}
       </head>
-      <body className={inter.className}>
+      <body className={`${poppins.variable} ${poppins.className}`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex min-h-[100dvh] flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
