@@ -13,6 +13,7 @@ import {
   Globe,
   MessageCircle,
   Clock,
+  Check,
 } from "lucide-react";
 
 interface PageProps {
@@ -152,7 +153,6 @@ const PagePreview = ({ params }: PageProps) => {
         transition={{ duration: 0.7, delay: 0.2 }}
       >
         <section className="relative w-full py-8 md:py-12">
-          
           <Preview
             oldVersion={images.oldVersion}
             newVersion={images.newVersion}
@@ -200,64 +200,127 @@ const PagePreview = ({ params }: PageProps) => {
         </div>
       </section>
 
-      <section className="w-full py-16 md:py-20 bg-gradient-to-b from-muted/30 via-background to-muted/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-
-        <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-sm font-semibold text-primary text-white">
-                  Todo lo necesario
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/70">
-                Qué incluye
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        <section className="w-full py-16 md:py-20 bg-muted/30 relative">
+          <div className="container px-4 md:px-6 max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+                Inversión
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Una solución completa lista para captar clientes desde el primer
-                día
+
+              <p className="text-muted-foreground text-lg">
+                Precio referencial según requerimientos del negocio.
               </p>
             </div>
-          </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {includesItems.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={`includes-item-${index}`}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.7, delay: index * 0.1 }}
-                >
-                  <Card
-                    className="group relative border-0 bg-primary/10 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
-                  >
-                    <CardContent className="p-8 relative z-10 flex flex-col items-center text-center gap-6">
-                      <div className="relative">
-                        <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 text-primary group-hover:from-primary/30 group-hover:via-primary/20 group-hover:to-primary/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 border border-primary/20 group-hover:border-primary/40 shadow-lg group-hover:shadow-primary/20">
-                          <Icon className="size-7 text-white" />
-                        </div>
-                      </div>
-                      <span className="text-xl font-semibold leading-tight group-hover:text-primary transition-colors duration-300">
-                        {item.text}
-                      </span>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
+
+            <div className="bg-background border border-border rounded-2xl p-8 md:p-12 shadow-lg">
+              {/* Precio */}
+              <div className="text-center mb-10">
+                <div className="mb-4">
+                  <span className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
+                    $99.999
+                  </span>
+                  <span className="text-xl md:text-2xl text-muted-foreground ml-2">
+                    CLP
+                  </span>
+                </div>
+                <p className="text-muted-foreground text-lg">
+                  Precio referencial según requerimientos del negocio.
+                </p>
+              </div>
+
+              {/* Lista de características */}
+              <div className="space-y-4 mb-10">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Diseño profesional enfocado en conversión
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Adaptada 100% a celular y tablets
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Botón WhatsApp con contacto directo
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Formulario de contacto funcional
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Dominio y hosting configurados
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Publicación y puesta en marcha
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Plazo estimado: 5 a 7 días hábiles
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Check className="size-4 text-primary" />
+                  </div>
+                  <span className="text-base md:text-lg text-foreground">
+                    Soporte inicial incluido
+                  </span>
+                </div>
+              </div>
+
+              {/* Mensajes destacados */}
+              <div className="pt-8 border-t border-border space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">👉</span>
+                  <span className="text-base md:text-lg font-semibold text-foreground">
+                    Sin pagos mensuales ocultos
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">👉</span>
+                  <span className="text-base md:text-lg font-semibold text-foreground">
+                    No es plantilla genérica
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}

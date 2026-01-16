@@ -69,7 +69,7 @@ const Preview = ({ oldVersion, newVersion }: PreviewProps) => {
                 </div>
               </div>
 
-              <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg z-10">
+              <div className="absolute -top-3 -right-3 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg z-10">
                 Nuevo
               </div>
             </div>
