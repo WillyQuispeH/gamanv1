@@ -22,25 +22,20 @@ interface PageProps {
   }>;
 }
 const imageMap: Record<string, { oldVersion: string; newVersion: string }> = {
-  "inversiones-jebt": {
-    oldVersion: "/proyects/inversiones-jebt/desktop.png",
-    newVersion: "/proyects/inversiones-jebt/desktop.png",
-  },
-  knokit: {
-    oldVersion: "/proyects/knokit/desktop.png",
-    newVersion: "/proyects/knokit/desktop.png",
-  },
   "secuoya-gestion-inmobiliaria": {
     oldVersion: "/proyects/secuoya-gestion-inmobiliaria/oldDesktop.png",
     newVersion: "/proyects/secuoya-gestion-inmobiliaria/newDesktop.png",
+  },
+  "oettinger-corretajes": {
+    oldVersion: "/proyects/oettinger-corretajes/oldDesktop.png",
+    newVersion: "/proyects/oettinger-corretajes/newDesktop.png",
   },
 };
 
 const getBusinessInfo = (slug: string) => {
   const businessNames: Record<string, string> = {
-    "inversiones-jebt": "INVERSIONES JEBT",
-    knokit: "Knokit",
     "secuoya-gestion-inmobiliaria": "Secuoya Gestión Inmobiliaria",
+    "oettinger-corretajes": "Oettinger Corretajes",
   };
   return businessNames[slug] || slug.replace(/-/g, " ").toUpperCase();
 };
