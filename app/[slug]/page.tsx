@@ -30,12 +30,17 @@ const imageMap: Record<string, { oldVersion: string; newVersion: string }> = {
     oldVersion: "/proyects/oettinger-corretajes/oldDesktop.png",
     newVersion: "/proyects/oettinger-corretajes/newDesktop.png",
   },
+  "eiii": {
+    oldVersion: "/proyects/eiii/oldDesktop.png",
+    newVersion: "/proyects/eiii/newDesktop.png",
+  },
 };
 
 const getBusinessInfo = (slug: string) => {
   const businessNames: Record<string, string> = {
     "secuoya-gestion-inmobiliaria": "Secuoya Gestión Inmobiliaria",
     "oettinger-corretajes": "Oettinger Corretajes",
+    "eiii": "EIII",
   };
   return businessNames[slug] || slug.replace(/-/g, " ").toUpperCase();
 };
