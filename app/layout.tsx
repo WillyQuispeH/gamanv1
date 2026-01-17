@@ -75,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" suppressHydrationWarning className="dark">
+    <html lang="es" suppressHydrationWarning className="light">
       <head>
         {/* Extra: Google Site Verification (si tienes código) */}
         {/* <meta name="google-site-verification" content="tu_codigo_aqui" /> */}
@@ -93,8 +93,8 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${poppins.className}`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
+          defaultTheme="light"
+          forcedTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >

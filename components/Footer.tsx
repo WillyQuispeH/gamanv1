@@ -11,12 +11,19 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2 font-bold">
-              <Image src="/iconNimux.png" alt="" width={40} height={40} />
+              <Image
+                src="/iconNimux.png"
+                alt=""
+                width={40}
+                height={40}
+                className="brightness-0"
+              />
               <Image
                 src="/namewhite.png"
                 alt=""
                 width={70}
                 height={40}
+                className="brightness-0"
               />
             </div>
             <p className="text-sm text-muted-foreground">
@@ -95,7 +102,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Gaman. Todos los derechos
             reservados.
           </p>
-{/* 
+          {/* 
           <div className="flex gap-4">
             <Link
               href="#"

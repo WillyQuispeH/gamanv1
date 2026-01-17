@@ -26,18 +26,24 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${
-        isScrolled ? "bg-background/80 shadow-sm" : "bg-transparent"
-      }`}
+      className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${isScrolled ? "bg-background/80 shadow-sm" : "bg-transparent"
+        }`}
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold">
-          <Image src="/iconNimux.png" alt="" width={40} height={40} />
+          <Image
+            src="/iconNimux.png"
+            alt=""
+            width={40}
+            height={40}
+            className="brightness-0"
+          />
           <Image
             src="/namewhite.png"
             alt=""
             width={100}
             height={70}
+            className="brightness-0"
           />
         </Link>
         <nav className="hidden md:flex gap-8">
@@ -72,9 +78,8 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="rounded-full bg-slate-800 text-white hover:bg-slate-900">
+            <Button className="">
               Contáctar
-              <ChevronRight className="ml-1 size-4" />
             </Button>
           </a>
         </div>

@@ -83,91 +83,90 @@ export default function LandingPage() {
     <>
       {/* Hero Section */}
       <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
-          <div className="container px-4 md:px-6 relative">
-            <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black
-             bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] 
-             dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)]
-              bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+        <div className="container px-4 md:px-6 relative">
+          {/* <div className="absolute inset-0 -z-10 h-full w-full bg-white
+             bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]
+              bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div> */}
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-3xl mx-auto mb-12"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
+            <Badge
+              className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium"
+              variant="secondary"
             >
-              <Badge
-                className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium"
-                variant="secondary"
+              Lanzamiento Próximo
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
+              Eleva tu Flujo de Trabajo con Gaman
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              La plataforma todo-en-uno que ayuda a los equipos a colaborar,
+              automatizar y entregar resultados excepcionales. Optimiza tus
+              procesos y enfócate en lo que realmente importa con nuestras
+              soluciones personalizadas de desarrollo web e IA.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Lanzamiento Próximo
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                Eleva tu Flujo de Trabajo con Gaman
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                La plataforma todo-en-uno que ayuda a los equipos a colaborar,
-                automatizar y entregar resultados excepcionales. Optimiza tus
-                procesos y enfócate en lo que realmente importa con nuestras
-                soluciones personalizadas de desarrollo web e IA.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="rounded-full h-12 px-8 text-base"
                 >
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="rounded-full h-12 px-8 text-base"
-                  >
-                    Contáctanos por WhatsApp
-                    <ArrowRight className="ml-2 size-4" />
-                  </Button>
-                </a>
+                  Contáctanos por WhatsApp
+                  <ArrowRight className="ml-2 size-4" />
+                </Button>
+              </a>
+            </div>
+            <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-1">
+                <Check className="size-4 text-primary" />
+                <span>Sin compromiso</span>
               </div>
-              <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <Check className="size-4 text-primary" />
-                  <span>Sin compromiso</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Check className="size-4 text-primary" />
-                  <span>Respuesta rápida por WhatsApp</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Check className="size-4 text-primary" />
-                  <span>Asesoría gratuita inicial</span>
-                </div>
+              <div className="flex items-center gap-1">
+                <Check className="size-4 text-primary" />
+                <span>Respuesta rápida por WhatsApp</span>
               </div>
-            </motion.div>
+              <div className="flex items-center gap-1">
+                <Check className="size-4 text-primary" />
+                <span>Asesoría gratuita inicial</span>
+              </div>
+            </div>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative mx-auto max-w-5xl"
-            >
-              <div className="rounded-xl overflow-hidden shadow-2xl border border-border/40 bg-gradient-to-b from-background to-muted/20">
-                <Image
-                  src="https://cdn.dribbble.com/userupload/12302729/file/original-fa372845e394ee85bebe0389b9d86871.png?resize=1504x1128&vertical=center"
-                  width={1280}
-                  height={720}
-                  alt="SaaSify dashboard"
-                  className="w-full h-auto"
-                  priority
-                />
-                <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/10 dark:ring-white/10"></div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 -z-10 h-[300px] w-[300px] rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl opacity-70"></div>
-              <div className="absolute -top-6 -left-6 -z-10 h-[300px] w-[300px] rounded-full bg-gradient-to-br from-secondary/30 to-primary/30 blur-3xl opacity-70"></div>
-            </motion.div>
-          </div>
-        </section>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative mx-auto max-w-5xl"
+          >
+            <div className="rounded-xl overflow-hidden shadow-2xl border border-border/40 bg-gradient-to-b from-background to-muted/20">
+              <Image
+                src="https://cdn.dribbble.com/userupload/12302729/file/original-fa372845e394ee85bebe0389b9d86871.png?resize=1504x1128&vertical=center"
+                width={1280}
+                height={720}
+                alt="SaaSify dashboard"
+                className="w-full h-auto"
+                priority
+              />
+              <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/10"></div>
+            </div>
+            <div className="absolute -bottom-6 -right-6 -z-10 h-[300px] w-[300px] rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl opacity-70"></div>
+            <div className="absolute -top-6 -left-6 -z-10 h-[300px] w-[300px] rounded-full bg-gradient-to-br from-secondary/30 to-primary/30 blur-3xl opacity-70"></div>
+          </motion.div>
+        </div>
+      </section>
 
-        {/* Logos Section */}
-        {/* <section className="w-full py-12 border-y bg-muted/30">
+      {/* Logos Section */}
+      {/* <section className="w-full py-12 border-y bg-muted/30">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <p className="text-sm font-medium text-muted-foreground">
@@ -192,530 +191,530 @@ export default function LandingPage() {
           </div>
         </section> */}
 
-        {/* Features Section */}
-        <section id="features" className="w-full py-20 md:py-32">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+      {/* Features Section */}
+      <section id="features" className="w-full py-20 md:py-32">
+        <div className="container px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          >
+            <Badge
+              className="rounded-full px-4 py-1.5 text-sm font-medium"
+              variant="secondary"
             >
-              <Badge
-                className="rounded-full px-4 py-1.5 text-sm font-medium"
-                variant="secondary"
+              Características
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Todo lo que Necesitas para Tener Éxito
+            </h2>
+            <p className="max-w-[800px] text-muted-foreground md:text-lg">
+              Nuestra plataforma integral ofrece todas las herramientas
+              necesarias para optimizar tus flujos de trabajo, aumentar la
+              productividad y alcanzar tus objetivos con soluciones
+              personalizadas de desarrollo web e inteligencia artificial.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {features.map((feature, i) => (
+              <motion.div key={i} variants={item}>
+                <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
+
+        <div className="container px-4 md:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
+          >
+            <Badge
+              className="rounded-full px-4 py-1.5 text-sm font-medium"
+              variant="secondary"
+            >
+              Cómo Funciona
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Proceso Sencillo, Resultados Poderosos
+            </h2>
+            <p className="max-w-[800px] text-muted-foreground md:text-lg">
+              Comienza en minutos y descubre la diferencia que nuestra
+              plataforma puede hacer por tu negocio con soluciones de
+              desarrollo web personalizadas e IA.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative">
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent -translate-y-1/2 z-0"></div>
+
+            {[
+              {
+                step: "01",
+                title: "Contacto Rápido",
+                description:
+                  "Contáctanos rápidamente a través de nuestra plataforma para obtener respuestas inmediatas sobre desarrollo web y soluciones personalizadas.",
+              },
+              {
+                step: "02",
+                title: "Configura tu Espacio de Trabajo",
+                description:
+                  "Personaliza tu espacio de trabajo de forma fácil y económica, adaptado a las necesidades de desarrollo web de tu equipo.",
+              },
+              {
+                step: "03",
+                title: "Aumenta la Productividad",
+                description:
+                  "Comienza a utilizar nuestras herramientas de desarrollo web para optimizar procesos y alcanzar tus objetivos de manera eficiente y rápida.",
+              },
+            ].map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative z-10 flex flex-col items-center text-center space-y-4"
               >
-                Características
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Todo lo que Necesitas para Tener Éxito
-              </h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Nuestra plataforma integral ofrece todas las herramientas
-                necesarias para optimizar tus flujos de trabajo, aumentar la
-                productividad y alcanzar tus objetivos con soluciones
-                personalizadas de desarrollo web e inteligencia artificial.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-            >
-              {features.map((feature, i) => (
-                <motion.div key={i} variants={item}>
-                  <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="size-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
-                        {feature.icon}
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {feature.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* How It Works Section */}
-        <section className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
-          <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
-
-          <div className="container px-4 md:px-6 relative">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
-            >
-              <Badge
-                className="rounded-full px-4 py-1.5 text-sm font-medium"
-                variant="secondary"
-              >
-                Cómo Funciona
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Proceso Sencillo, Resultados Poderosos
-              </h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Comienza en minutos y descubre la diferencia que nuestra
-                plataforma puede hacer por tu negocio con soluciones de
-                desarrollo web personalizadas e IA.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative">
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent -translate-y-1/2 z-0"></div>
-
-              {[
-                {
-                  step: "01",
-                  title: "Contacto Rápido",
-                  description:
-                    "Contáctanos rápidamente a través de nuestra plataforma para obtener respuestas inmediatas sobre desarrollo web y soluciones personalizadas.",
-                },
-                {
-                  step: "02",
-                  title: "Configura tu Espacio de Trabajo",
-                  description:
-                    "Personaliza tu espacio de trabajo de forma fácil y económica, adaptado a las necesidades de desarrollo web de tu equipo.",
-                },
-                {
-                  step: "03",
-                  title: "Aumenta la Productividad",
-                  description:
-                    "Comienza a utilizar nuestras herramientas de desarrollo web para optimizar procesos y alcanzar tus objetivos de manera eficiente y rápida.",
-                },
-              ].map((step, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="relative z-10 flex flex-col items-center text-center space-y-4"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/70 text-primary-foreground text-xl font-bold shadow-lg">
-                    {step.step}
-                  </div>
-                  <h3 className="text-xl font-bold">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="testimonials" className="w-full py-20 md:py-32">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
-            >
-              <Badge
-                className="rounded-full px-4 py-1.5 text-sm font-medium"
-                variant="secondary"
-              >
-                Testimonios
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Apreciado por Equipos en Todo el Mundo
-              </h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                No solo confíes en nuestra palabra. Descubre lo que nuestros
-                clientes dicen sobre su experiencia con nuestras soluciones de
-                desarrollo web personalizadas.
-              </p>
-            </motion.div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  quote:
-                    "Gaman ha transformado la forma en que gestionamos nuestros proyectos. Las características de automatización nos han ahorrado innumerables horas de trabajo manual.",
-                  author: "Sara González",
-                  role: "Gerente de Proyectos, TechCorp",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "El panel de análisis nos proporciona información a la que nunca habíamos tenido acceso. Nos ha ayudado a tomar decisiones basadas en datos que han mejorado nuestro retorno de inversión.",
-                  author: "Miguel Fernández",
-                  role: "Director de Marketing, GrowthLabs",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "El soporte al cliente es excepcional. Cada vez que hemos tenido un problema, el equipo ha respondido rápidamente y lo ha resuelto. No podríamos pedir mejor servicio.",
-                  author: "Emilia Rodríguez",
-                  role: "Líder de Operaciones, StartupX",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "Hemos probado varias soluciones similares, pero ninguna se compara con la facilidad de uso y las funciones integrales de Gaman. Ha sido un cambio total.",
-                  author: "David Kim",
-                  role: "CEO, InnovateNow",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "Las herramientas de colaboración han hecho el trabajo remoto mucho más fácil para nuestro equipo. Somos más productivos que nunca, a pesar de estar en diferentes zonas horarias.",
-                  author: "Lisa Patel",
-                  role: "Directora de RRHH, RemoteFirst",
-                  rating: 5,
-                },
-                {
-                  quote:
-                    "La implementación fue perfecta y el retorno de inversión fue casi inmediato. Hemos reducido nuestros costos operativos en un 30% desde que cambiamos a Gaman.",
-                  author: "Jaime Wilson",
-                  role: "COO, ScaleUp Inc",
-                  rating: 5,
-                },
-              ].map((testimonial, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                >
-                  <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex mb-4">
-                        {Array(testimonial.rating)
-                          .fill(0)
-                          .map((_, j) => (
-                            <Star
-                              key={j}
-                              className="size-4 text-yellow-500 fill-yellow-500"
-                            />
-                          ))}
-                      </div>
-                      <p className="text-lg mb-6 flex-grow">
-                        {testimonial.quote}
-                      </p>
-                      <div className="flex items-center gap-4 mt-auto pt-4 border-t border-border/40">
-                        <div className="size-10 rounded-full bg-muted flex items-center justify-center text-foreground font-medium">
-                          {testimonial.author.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="font-medium">{testimonial.author}</p>
-                          <p className="text-sm text-muted-foreground">
-                            {testimonial.role}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Section */}
-        <section
-          id="portfolio"
-          className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden"
-        >
-          <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
-
-          <div className="container px-4 md:px-6 relative">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
-            >
-              <Badge
-                className="rounded-full px-4 py-1.5 text-sm font-medium"
-                variant="secondary"
-              >
-                Portafolio
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Portafolio de Proyectos
-              </h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Descubre algunos de los proyectos más destacados que hemos
-                desarrollado para nuestros clientes.
-              </p>
-            </motion.div>
-
-            <div className="mx-auto max-w-5xl">
-              <Tabs defaultValue="web-systems" className="w-full">
-                <div className="flex justify-center mb-8">
-                  <TabsList className="rounded-full p-1">
-                    <TabsTrigger
-                      value="web-systems"
-                      className="rounded-full px-6"
-                    >
-                      Sistemas Web
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="landing-pages"
-                      className="rounded-full px-6"
-                    >
-                      Landing Pages
-                    </TabsTrigger>
-                  </TabsList>
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/70 text-primary-foreground text-xl font-bold shadow-lg">
+                  {step.step}
                 </div>
-                <TabsContent value="web-systems">
-                  <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
-                    {[
-                      {
-                        name: "Sistema de Gestión Empresarial",
-                        description:
-                          "Desarrollamos un sistema completo para la gestión de empresas con funcionalidades avanzadas y personalizadas.",
-                        image: "path_to_image_1.jpg",
-                      },
-                      {
-                        name: "Portal Web para E-commerce",
-                        description:
-                          "Creación de una plataforma de comercio electrónico con integraciones de pago y gestión de productos.",
-                        image: "path_to_image_2.jpg",
-                      },
-                      {
-                        name: "Sistema de Reservas Online",
-                        description:
-                          "Desarrollo de un sistema online para reservas con integración a calendarios y gestión de clientes.",
-                        image: "path_to_image_3.jpg",
-                      },
-                    ].map((project, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: i * 0.1 }}
-                      >
-                        <Card className="bg-gradient-to-b from-background to-muted/10 backdrop-blur">
-                          <CardContent className="p-6">
-                            <h3 className="text-2xl font-bold">
-                              {project.name}
-                            </h3>
-                            <p className="text-muted-foreground mt-2">
-                              {project.description}
-                            </p>
-                            {/* <img
-                              src={project.image}
-                              alt={project.name}
-                              className="w-full mt-4"
-                            /> */}
-                          </CardContent>
-                        </Card>
-                      </motion.div>
-                    ))}
-                  </div>
-                </TabsContent>
-                <TabsContent value="landing-pages">
-                  <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
-                    {[
-                      {
-                        name: "Landing Page para Producto",
-                        description:
-                          "Diseño y desarrollo de una landing page optimizada para conversiones de un producto específico.",
-                        image: "path_to_image_4.jpg",
-                      },
-                      {
-                        name: "Landing Page para Evento",
-                        description:
-                          "Creación de una página de aterrizaje para promover un evento con integración de formularios de inscripción.",
-                        image: "path_to_image_5.jpg",
-                      },
-                      {
-                        name: "Landing Page para Captación de Leads",
-                        description:
-                          "Desarrollamos una landing page enfocada en la captación de leads con diseño atractivo y llamadas a la acción claras.",
-                        image: "path_to_image_6.jpg",
-                      },
-                    ].map((project, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: i * 0.1 }}
-                      >
-                        <Card className="bg-gradient-to-b from-background to-muted/10 backdrop-blur">
-                          <CardContent className="p-6">
-                            <h3 className="text-2xl font-bold">
-                              {project.name}
-                            </h3>
-                            <p className="text-muted-foreground mt-2">
-                              {project.description}
-                            </p>
-                            {/* <img
-                              src={project.image}
-                              alt={project.name}
-                              className="w-full mt-4"
-                            /> */}
-                          </CardContent>
-                        </Card>
-                      </motion.div>
-                    ))}
-                  </div>
-                </TabsContent>
-              </Tabs>
-            </div>
+                <h3 className="text-xl font-bold">{step.title}</h3>
+                <p className="text-muted-foreground">{step.description}</p>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* FAQ Section */}
-        <section id="faq" className="w-full py-20 md:py-32">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+      <section id="testimonials" className="w-full py-20 md:py-32">
+        <div className="container px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          >
+            <Badge
+              className="rounded-full px-4 py-1.5 text-sm font-medium"
+              variant="secondary"
             >
-              <Badge
-                className="rounded-full px-4 py-1.5 text-sm font-medium"
-                variant="secondary"
+              Testimonios
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Apreciado por Equipos en Todo el Mundo
+            </h2>
+            <p className="max-w-[800px] text-muted-foreground md:text-lg">
+              No solo confíes en nuestra palabra. Descubre lo que nuestros
+              clientes dicen sobre su experiencia con nuestras soluciones de
+              desarrollo web personalizadas.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                quote:
+                  "Gaman ha transformado la forma en que gestionamos nuestros proyectos. Las características de automatización nos han ahorrado innumerables horas de trabajo manual.",
+                author: "Sara González",
+                role: "Gerente de Proyectos, TechCorp",
+                rating: 5,
+              },
+              {
+                quote:
+                  "El panel de análisis nos proporciona información a la que nunca habíamos tenido acceso. Nos ha ayudado a tomar decisiones basadas en datos que han mejorado nuestro retorno de inversión.",
+                author: "Miguel Fernández",
+                role: "Director de Marketing, GrowthLabs",
+                rating: 5,
+              },
+              {
+                quote:
+                  "El soporte al cliente es excepcional. Cada vez que hemos tenido un problema, el equipo ha respondido rápidamente y lo ha resuelto. No podríamos pedir mejor servicio.",
+                author: "Emilia Rodríguez",
+                role: "Líder de Operaciones, StartupX",
+                rating: 5,
+              },
+              {
+                quote:
+                  "Hemos probado varias soluciones similares, pero ninguna se compara con la facilidad de uso y las funciones integrales de Gaman. Ha sido un cambio total.",
+                author: "David Kim",
+                role: "CEO, InnovateNow",
+                rating: 5,
+              },
+              {
+                quote:
+                  "Las herramientas de colaboración han hecho el trabajo remoto mucho más fácil para nuestro equipo. Somos más productivos que nunca, a pesar de estar en diferentes zonas horarias.",
+                author: "Lisa Patel",
+                role: "Directora de RRHH, RemoteFirst",
+                rating: 5,
+              },
+              {
+                quote:
+                  "La implementación fue perfecta y el retorno de inversión fue casi inmediato. Hemos reducido nuestros costos operativos en un 30% desde que cambiamos a Gaman.",
+                author: "Jaime Wilson",
+                role: "COO, ScaleUp Inc",
+                rating: 5,
+              },
+            ].map((testimonial, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
               >
-                PREGUNTAS FRECUENTES
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Preguntas Frecuentes
-              </h2>
-              <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Encuentra respuestas a las preguntas comunes sobre nuestras
-                soluciones de desarrollo web e inteligencia artificial.
-              </p>
-            </motion.div>
-
-            <div className="mx-auto max-w-3xl">
-              <Accordion type="single" collapsible className="w-full">
-                {[
-                  {
-                    question:
-                      "¿Cuánto tiempo toma completar un proyecto de desarrollo web?",
-                    answer:
-                      "El tiempo de entrega depende de la complejidad y los requisitos específicos del proyecto. En general, los proyectos pueden tomar desde unas pocas semanas hasta varios meses, dependiendo de su alcance.",
-                  },
-                  {
-                    question:
-                      "¿Puedo hacer cambios durante el proceso de desarrollo?",
-                    answer:
-                      "Sí, durante el proceso de desarrollo se pueden realizar ajustes y modificaciones según sea necesario. Sin embargo, es importante tener en cuenta que los cambios pueden afectar el plazo de entrega y el costo final del proyecto.",
-                  },
-                  {
-                    question:
-                      "¿Ofrecen mantenimiento y soporte después de completar el proyecto?",
-                    answer:
-                      "Sí, ofrecemos planes de mantenimiento y soporte continuos para garantizar que tu sitio web funcione correctamente a lo largo del tiempo, con actualizaciones y correcciones cuando sea necesario.",
-                  },
-                  {
-                    question: "¿Qué tecnologías usan para el desarrollo web?",
-                    answer:
-                      "Utilizamos tecnologías modernas y escalables como React, Next.js, Node.js, y soluciones de backend personalizadas, adaptándonos a las necesidades específicas de cada cliente para garantizar un rendimiento óptimo.",
-                  },
-                  {
-                    question:
-                      "¿Puedo tener acceso al código fuente de mi proyecto?",
-                    answer:
-                      "Sí, todos nuestros clientes tienen acceso completo al código fuente de su proyecto una vez que se haya completado. Creemos en la transparencia y en brindar a nuestros clientes el control total sobre sus productos digitales.",
-                  },
-                  {
-                    question:
-                      "¿Qué sucede si tengo un problema después de que el proyecto esté terminado?",
-                    answer:
-                      "Nuestro equipo de soporte está disponible para ayudarte con cualquier problema que puedas enfrentar después de completar el proyecto. Ofrecemos soporte post-lanzamiento para resolver problemas técnicos o para realizar mejoras adicionales.",
-                  },
-                ].map((faq, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.05 }}
-                  >
-                    <AccordionItem
-                      value={`item-${i}`}
-                      className="border-b border-border/40 py-2"
-                    >
-                      <AccordionTrigger className="text-left font-medium hover:no-underline">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </motion.div>
-                ))}
-              </Accordion>
-            </div>
+                <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className="flex mb-4">
+                      {Array(testimonial.rating)
+                        .fill(0)
+                        .map((_, j) => (
+                          <Star
+                            key={j}
+                            className="size-4 text-yellow-500 fill-yellow-500"
+                          />
+                        ))}
+                    </div>
+                    <p className="text-lg mb-6 flex-grow">
+                      {testimonial.quote}
+                    </p>
+                    <div className="flex items-center gap-4 mt-auto pt-4 border-t border-border/40">
+                      <div className="size-10 rounded-full bg-muted flex items-center justify-center text-foreground font-medium">
+                        {testimonial.author.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="font-medium">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-white to-gray-50 dark:from-neutral-950 dark:to-neutral-900 text-gray-900 dark:text-gray-100 relative overflow-hidden">
-          {/* Grid lines */}
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      {/* Pricing Section */}
+      <section
+        id="portfolio"
+        className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
 
-          {/* Blur circles */}
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-black/10 dark:bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-black/10 dark:bg-white/10 rounded-full blur-3xl"></div>
-
-          <div className="container px-4 md:px-6 relative">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center space-y-6 text-center"
+        <div className="container px-4 md:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          >
+            <Badge
+              className="rounded-full px-4 py-1.5 text-sm font-medium"
+              variant="secondary"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                ¿Listo para Implementar Tecnología en tu Negocio?
-              </h2>
+              Portafolio
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Portafolio de Proyectos
+            </h2>
+            <p className="max-w-[800px] text-muted-foreground md:text-lg">
+              Descubre algunos de los proyectos más destacados que hemos
+              desarrollado para nuestros clientes.
+            </p>
+          </motion.div>
 
-              <p className="mx-auto max-w-[700px] text-gray-600 dark:text-gray-300 md:text-xl">
-                Únete a miles de clientes satisfechos que han transformado sus
-                negocios mediante la implementación de soluciones tecnológicas
-                avanzadas y han mejorado su productividad.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <a
-                  href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="rounded-full h-12 px-8 text-base"
+          <div className="mx-auto max-w-5xl">
+            <Tabs defaultValue="web-systems" className="w-full">
+              <div className="flex justify-center mb-8">
+                <TabsList className="rounded-full p-1">
+                  <TabsTrigger
+                    value="web-systems"
+                    className="rounded-full px-6"
                   >
-                    Contáctanos por WhatsApp
-                    <ArrowRight className="ml-2 size-4" />
-                  </Button>
-                </a>
+                    Sistemas Web
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="landing-pages"
+                    className="rounded-full px-6"
+                  >
+                    Landing Pages
+                  </TabsTrigger>
+                </TabsList>
               </div>
-
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-                Disponibles 24/7
-              </p>
-            </motion.div>
+              <TabsContent value="web-systems">
+                <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+                  {[
+                    {
+                      name: "Sistema de Gestión Empresarial",
+                      description:
+                        "Desarrollamos un sistema completo para la gestión de empresas con funcionalidades avanzadas y personalizadas.",
+                      image: "path_to_image_1.jpg",
+                    },
+                    {
+                      name: "Portal Web para E-commerce",
+                      description:
+                        "Creación de una plataforma de comercio electrónico con integraciones de pago y gestión de productos.",
+                      image: "path_to_image_2.jpg",
+                    },
+                    {
+                      name: "Sistema de Reservas Online",
+                      description:
+                        "Desarrollo de un sistema online para reservas con integración a calendarios y gestión de clientes.",
+                      image: "path_to_image_3.jpg",
+                    },
+                  ].map((project, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                    >
+                      <Card className="bg-gradient-to-b from-background to-muted/10 backdrop-blur">
+                        <CardContent className="p-6">
+                          <h3 className="text-2xl font-bold">
+                            {project.name}
+                          </h3>
+                          <p className="text-muted-foreground mt-2">
+                            {project.description}
+                          </p>
+                          {/* <img
+                              src={project.image}
+                              alt={project.name}
+                              className="w-full mt-4"
+                            /> */}
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </TabsContent>
+              <TabsContent value="landing-pages">
+                <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+                  {[
+                    {
+                      name: "Landing Page para Producto",
+                      description:
+                        "Diseño y desarrollo de una landing page optimizada para conversiones de un producto específico.",
+                      image: "path_to_image_4.jpg",
+                    },
+                    {
+                      name: "Landing Page para Evento",
+                      description:
+                        "Creación de una página de aterrizaje para promover un evento con integración de formularios de inscripción.",
+                      image: "path_to_image_5.jpg",
+                    },
+                    {
+                      name: "Landing Page para Captación de Leads",
+                      description:
+                        "Desarrollamos una landing page enfocada en la captación de leads con diseño atractivo y llamadas a la acción claras.",
+                      image: "path_to_image_6.jpg",
+                    },
+                  ].map((project, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                    >
+                      <Card className="bg-gradient-to-b from-background to-muted/10 backdrop-blur">
+                        <CardContent className="p-6">
+                          <h3 className="text-2xl font-bold">
+                            {project.name}
+                          </h3>
+                          <p className="text-muted-foreground mt-2">
+                            {project.description}
+                          </p>
+                          {/* <img
+                              src={project.image}
+                              alt={project.name}
+                              className="w-full mt-4"
+                            /> */}
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
-        </section>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="w-full py-20 md:py-32">
+        <div className="container px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          >
+            <Badge
+              className="rounded-full px-4 py-1.5 text-sm font-medium"
+              variant="secondary"
+            >
+              PREGUNTAS FRECUENTES
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Preguntas Frecuentes
+            </h2>
+            <p className="max-w-[800px] text-muted-foreground md:text-lg">
+              Encuentra respuestas a las preguntas comunes sobre nuestras
+              soluciones de desarrollo web e inteligencia artificial.
+            </p>
+          </motion.div>
+
+          <div className="mx-auto max-w-3xl">
+            <Accordion type="single" collapsible className="w-full">
+              {[
+                {
+                  question:
+                    "¿Cuánto tiempo toma completar un proyecto de desarrollo web?",
+                  answer:
+                    "El tiempo de entrega depende de la complejidad y los requisitos específicos del proyecto. En general, los proyectos pueden tomar desde unas pocas semanas hasta varios meses, dependiendo de su alcance.",
+                },
+                {
+                  question:
+                    "¿Puedo hacer cambios durante el proceso de desarrollo?",
+                  answer:
+                    "Sí, durante el proceso de desarrollo se pueden realizar ajustes y modificaciones según sea necesario. Sin embargo, es importante tener en cuenta que los cambios pueden afectar el plazo de entrega y el costo final del proyecto.",
+                },
+                {
+                  question:
+                    "¿Ofrecen mantenimiento y soporte después de completar el proyecto?",
+                  answer:
+                    "Sí, ofrecemos planes de mantenimiento y soporte continuos para garantizar que tu sitio web funcione correctamente a lo largo del tiempo, con actualizaciones y correcciones cuando sea necesario.",
+                },
+                {
+                  question: "¿Qué tecnologías usan para el desarrollo web?",
+                  answer:
+                    "Utilizamos tecnologías modernas y escalables como React, Next.js, Node.js, y soluciones de backend personalizadas, adaptándonos a las necesidades específicas de cada cliente para garantizar un rendimiento óptimo.",
+                },
+                {
+                  question:
+                    "¿Puedo tener acceso al código fuente de mi proyecto?",
+                  answer:
+                    "Sí, todos nuestros clientes tienen acceso completo al código fuente de su proyecto una vez que se haya completado. Creemos en la transparencia y en brindar a nuestros clientes el control total sobre sus productos digitales.",
+                },
+                {
+                  question:
+                    "¿Qué sucede si tengo un problema después de que el proyecto esté terminado?",
+                  answer:
+                    "Nuestro equipo de soporte está disponible para ayudarte con cualquier problema que puedas enfrentar después de completar el proyecto. Ofrecemos soporte post-lanzamiento para resolver problemas técnicos o para realizar mejoras adicionales.",
+                },
+              ].map((faq, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                >
+                  <AccordionItem
+                    value={`item-${i}`}
+                    className="border-b border-border/40 py-2"
+                  >
+                    <AccordionTrigger className="text-left font-medium hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="w-full py-20 md:py-32 bg-gradient-to-br from-white to-gray-50 text-gray-900 relative overflow-hidden">
+        {/* Grid lines */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+        {/* Blur circles */}
+        <div className="absolute -top-24 -left-24 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
+
+        <div className="container px-4 md:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center space-y-6 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+              ¿Listo para Implementar Tecnología en tu Negocio?
+            </h2>
+
+            <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl">
+              Únete a miles de clientes satisfechos que han transformado sus
+              negocios mediante la implementación de soluciones tecnológicas
+              avanzadas y han mejorado su productividad.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mt-4">
+              <a
+                href="https://wa.me/56982597210?text=Hola%2C%20Estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo.%20%C2%BFPodemos%20hablar%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="rounded-full h-12 px-8 text-base"
+                >
+                  Contáctanos por WhatsApp
+                  <ArrowRight className="ml-2 size-4" />
+                </Button>
+              </a>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-4">
+              Disponibles 24/7
+            </p>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 }
