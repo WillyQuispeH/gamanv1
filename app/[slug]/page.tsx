@@ -50,6 +50,7 @@ const getBusinessInfo = (slug: string) => {
     "oettinger-corretajes": "Oettinger Corretajes",
     "eiii": "EIII",
     "punto-propiedades": "Punto Propiedades",
+    "inmobiliara-fg": "Inmobiliaria FG",
   };
   return businessNames[slug] || slug.replace(/-/g, " ").toUpperCase();
 };
