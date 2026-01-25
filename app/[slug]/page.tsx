@@ -37,6 +37,10 @@ const imageMap: Record<string, { oldVersion: string; newVersion: string }> = {
   "punto-propiedades": {
     oldVersion: "https://www.puntopropiedades.cl/",
     newVersion: "https://realestatehub-32.preview.emergentagent.com/",
+  },
+  "inmobiliara-fg": {
+    oldVersion: "https://www.inmobiliariafg.cl/",
+    newVersion: "https://realestate-pro-77.preview.emergentagent.com/",
   }
 };
 
