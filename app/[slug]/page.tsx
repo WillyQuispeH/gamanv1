@@ -34,6 +34,10 @@ const imageMap: Record<string, { oldVersion: string; newVersion: string }> = {
     oldVersion: "/proyects/eiii/oldDesktop.png",
     newVersion: "/proyects/eiii/newDesktop.png",
   },
+  "punto-propiedades": {
+    oldVersion: "https://www.puntopropiedades.cl/",
+    newVersion: "https://realestatehub-32.preview.emergentagent.com/",
+  }
 };
 
 const getBusinessInfo = (slug: string) => {
@@ -41,6 +45,7 @@ const getBusinessInfo = (slug: string) => {
     "secuoya-gestion-inmobiliaria": "Secuoya Gestión Inmobiliaria",
     "oettinger-corretajes": "Oettinger Corretajes",
     "eiii": "EIII",
+    "punto-propiedades": "Punto Propiedades",
   };
   return businessNames[slug] || slug.replace(/-/g, " ").toUpperCase();
 };
