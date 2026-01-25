@@ -41,6 +41,10 @@ const imageMap: Record<string, { oldVersion: string; newVersion: string }> = {
   "inmobiliara-fg": {
     oldVersion: "https://www.inmobiliariafg.cl/",
     newVersion: "https://realestate-pro-77.preview.emergentagent.com/",
+  },
+  "imagina": {
+    oldVersion: "https://www.imagina.cl/",
+    newVersion: "https://fresh-imagina.preview.emergentagent.com/",
   }
 };
 
@@ -51,6 +55,7 @@ const getBusinessInfo = (slug: string) => {
     "eiii": "EIII",
     "punto-propiedades": "Punto Propiedades",
     "inmobiliara-fg": "Inmobiliaria FG",
+    "imagina": "Imagina",
   };
   return businessNames[slug] || slug.replace(/-/g, " ").toUpperCase();
 };
